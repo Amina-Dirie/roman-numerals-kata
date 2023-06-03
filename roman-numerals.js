@@ -1,15 +1,13 @@
 function RomanNumerals(num) {
-    if (typeof num === "string") {
-      return "number is required";
-    }
-  
-    if (num === 0) {
-      return 0;
-    }
-  
-    if (num > 3999) {
-      return "number is too large";
-    }
+    switch (true) {
+        case typeof num === "string":
+          return "number is required";
+        case num === 0:
+          return 0;
+        case num > 3999:
+          return "number is too large";
+       
+      }
   
     const romanNumerals = {
       M: 1000,
@@ -28,7 +26,6 @@ function RomanNumerals(num) {
     };
   
     let result = "";
-  
     for (let key in romanNumerals) {
       while (num >= romanNumerals[key]) {
         result += key;
